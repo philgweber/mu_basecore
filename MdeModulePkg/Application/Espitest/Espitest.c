@@ -13,7 +13,7 @@
 #include <Library/DebugLib.h>
 
 #define ESPI_BASE_ADDR     0xBC100000u
-//#define ESPI_BASE_ADDR     0x70000000u
+//#define ESPI_BASE_ADDR     0x1060000000u
 
 // MMIO addresses from the Rust source
 #define DN_TXHDR_0_ADDR       (ESPI_BASE_ADDR + 0x0000u)
@@ -413,18 +413,19 @@ RunEspiTest(VOID)
   DEBUG((DEBUG_INFO, "Peripheral Read Data: %08x\n", peripheral_data));
 }
 
+
 /**
   UEFI application entry point
 */
 EFI_STATUS
 EFIAPI
-_ModuleEntryPoint (
+UefiMain (
   IN EFI_HANDLE ImageHandle,
   IN EFI_SYSTEM_TABLE *SystemTable
   )
 {
   EFI_STATUS Status = EFI_SUCCESS;
-  DEBUG((DEBUG_INFO, "eSPI Test UEFI application\n"));
+  DEBUG((DEBUG_ERROR, "eSPI Test UEFI application\n"));
 
   // Reserve/map the eSPI MMIO region before touching it
   EFI_STATUS MapStatus = MapEspiRegion();

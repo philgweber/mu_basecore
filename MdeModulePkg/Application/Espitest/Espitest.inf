@@ -15,4 +15,5 @@
 [LibraryClasses]
   UefiLib
   UefiBootServicesTableLib
+  UefiApplicationEntryPoint
   DebugLib
