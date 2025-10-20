@@ -1,0 +1,18 @@
+[Defines]
+  INF_VERSION                    = 0x00010017
+  BASE_NAME                      = Espitest
+  FILE_GUID                      = d3f9a8e2-7c4b-4b6e-9f1b-2a6c9d1e3f4a
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+[Sources]
+  Espitest.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+
+[LibraryClasses]
+  UefiLib
+  UefiBootServicesTableLib
+  DebugLib
